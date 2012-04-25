@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{%block body %}
+<form NAME="Holder">
+	<tr>
+	  <td height="54">
+		  <div align="center">
+			  <p>
+			  <input type="text" name="Input" value="${freq}"/>
+			  </p>
+		  </div>
+	  </td>
+  </tr>
+</form>
+  <tr>
+	  <td height="227">
+		  <table width="100%" height="174" border="1" align="center">
+			  <tr>
+        <td width="13%" height="116"></td>
+        <td width="54%"><table width="95%" border="1" align="center">
+          <tr>
+            <td><div align="center">
+                <input type="button" name="Button" value="Hold"
+                OnClick="javascript:invokeCmd('KEY07')"/>
+            </div></td>
+            <td><div align="center">
+              <input type="button" name="Pri" value="Pri"
+              OnClick="javascript:invokeCmd('KEY05')"/>
+            </div></td>
+            <td><div align="center">
+              <input type="button" name="Search" value="Search"
+              OnClick="javascript:invokeCmd('KEY09')"/>
+            </div></td>
+            <td><div align="center">
+              <input type="button" name="SVC" value="SVC"
+              OnClick="javascript:invokeCmd('KEY10')"/>
+            </div></td>
+            <td><div align="center">
+              <input type="button" name="Scan" value="Scan"
+              OnClick="javascript:invokeCmd('KEY00')"/>
+            </div></td>
+            <td><div align="center">
+              <input type="button" name="Manual" value="Manual"
+              OnClick="javascript:invokeCmd('KEY01')"/>
+            </div></td>
+          </tr>
+          <tr>
+            <td><div align="center">
+              <input type="button" name="Limit" value="Limit"
+              OnClick="javascript:invokeCmd('KEY08')"/>
+            </div></td>
+            <td><div align="center">
+              <input type="button" name="Data" value="Data"
+              OnClick="javascript:invokeCmd('KEY11')"/>
+            </div></td>
+            <td><div align="center">
+              <input type="button" name="Skip" value="Skip"
+              OnClick="javascript:invokeCmd('KEY06')"/>
+            </div></td>
+            <td><div align="center">
+              <input type="button" name="Delay" value="Delay"
+              OnClick="javascript:invokeCmd('KEY12')"/>
+            </div></td
+{% endblock %}
