@@ -1,5 +1,14 @@
-from flask import Flask, request, url_for, redirect, abort, render_template
+from flask import Flask, request, url_for, redirect, abort, render_template, Response, make_response
+import serial
+import time
 
+ser = serial.Serial(
+        port='/dev/null',
+        baudrate=19200,
+        parity=serial.PARITY_NONE,
+        stopbits=serial.STOPBITS_ONE,
+        bytesize=serial.EIGHTBITS
+)
 
 
 app = Flask(__name__)
@@ -10,9 +19,16 @@ def index():
 
 
 @app.route('/runcmd')
-@app.route('/runcmd/<button>')
-def runcmd(button):
-	return 'hello'
+def runcmd():
+	ser.open()
+	ser.isOpen()
+	Button = request.args.get('Button')
+	ser.write(Button + '\r')
+	time.sleep(1)
+	while ser.inWaiting() > 0:
+		freq += ser.read(1)
+		
+	return freq
 
 
 if __name__ == '__main__':
