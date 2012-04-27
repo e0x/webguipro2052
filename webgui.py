@@ -25,10 +25,10 @@ def runcmd():
 	Button = request.args.get('Button')
 	ser.write(Button + '\r')
 	time.sleep(1)
+	ser.write('MA' + '\r')
 	while ser.inWaiting() > 0:
 		freq += ser.read(1)
-		
-	return freq
+	return 'freq' 
 
 
 if __name__ == '__main__':
