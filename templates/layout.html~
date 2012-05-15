@@ -3,6 +3,7 @@
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <script>
 	function invokeCmd(param) {
+	//	var $write = $('#scanscreen');
 		var url = "{{ url_for('runcmd') }}" + '?Button='  + param
 		var http = new XMLHttpRequest();
 		http.open("GET", url, true);
@@ -11,11 +12,12 @@
 {
    if(this.readyState == 4 && this.status == 200)
      {
-     document.getElementById('freq').value = this.responseText;
+	      document.getElementById('scanscreen').value = this.responseText;
+	     // Add the character
+	     // $write.html($write.html() = this.responseText);
+	     
      }
 }
-http.open("GET", "/runcmd?Button=" + param, true);
-http.send(null);
 
 }
 
