@@ -1,5 +1,7 @@
 <!doctype html>
-<title>WebGui Pro 2052</title>
+<head>
+	<title>WebGui Pro 2052</title>
+</head>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <script>
 	function invokeCmd(param) {

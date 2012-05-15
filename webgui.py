@@ -1,5 +1,6 @@
 from flask import Flask, request, url_for, redirect, abort, render_template, Response, make_response
-import serial
+#import serial
+import myserial as serial
 import time
 
 ser = serial.Serial(
