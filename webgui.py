@@ -1,6 +1,6 @@
 from flask import Flask, request, url_for, redirect, abort, render_template, Response, make_response
-#import serial
-import myserial as serial
+import serial
+#import myserial as serial
 import time
 
 ser = serial.Serial(
@@ -29,7 +29,7 @@ def runcmd():
 	ser.write('MA' + '\r')
 	while ser.inWaiting() > 0:
 		freq += ser.read(1)
-	return 'freq' 
+	return freq 
 
 
 if __name__ == '__main__':
